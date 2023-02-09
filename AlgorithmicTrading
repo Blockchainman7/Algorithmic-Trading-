@@ -1,0 +1,40 @@
+package AlgorithmicTrading;
+
+public class algorithmictrading {
+	
+	  public static void main(String[] args) {
+
+	        // Create a stock data array
+	        double[] stockData = {100, 101, 102, 103, 104, 105, 106, 107, 108};
+
+	        // Initialize variables
+	        double buyPrice = 0;
+	        double sellPrice = 0;
+
+	        // Loop through stock data
+	        for (int i = 0; i < stockData.length; i++) {
+
+	            double currentPrice = stockData[i];
+
+	            // Check if we should buy
+	            if (currentPrice < buyPrice || buyPrice == 0) {
+	                buyPrice = currentPrice;
+	            }
+
+	            // Check if we should sell
+	            if (currentPrice > sellPrice) {
+	                sellPrice = currentPrice;
+	            }
+	        }
+
+	        // Calculate profit
+	        double profit = sellPrice - buyPrice;
+
+	        System.out.println("Buy Price: " + buyPrice);
+	        System.out.println("Sell Price: " + sellPrice);
+	        System.out.println("Profit: " + profit);
+	    }
+	}
+
+
+
